@@ -5,3 +5,6 @@ directory "/opt/local" do
   recursive true
   action :create
 end
+
+s3 = Aws::S3::Client.new(region:'us-east-1')
+s3.get_object({bucket: "herberk1", key:"test.zip"},target"/opt/local/test.zip")
