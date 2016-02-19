@@ -1,5 +1,3 @@
-require 'aws-sdk'
-
 directory "/opt/local" do
   owner 'root'
   group 'root'
