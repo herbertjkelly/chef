@@ -1,3 +1,4 @@
+depends 'sk_ruby'
 require 'aws-sdk'
 
 s3 = AWS::S3.new
