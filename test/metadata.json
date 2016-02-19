@@ -7,7 +7,7 @@
   "license": "all_rights",
   "platforms": {
   },
-  "dependencies": {
+  "dependencies": {"aws"
   },
   "recommendations": {
   },
