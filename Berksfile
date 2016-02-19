@@ -1,2 +1,4 @@
-source 'https://api.berkshelf.com'
-cookbook "aws", ">= 2.2.2"
+source "https://supermarket.chef.io"
+ 
+metadata
+cookbook 'aws', '~> 2.9.2'
