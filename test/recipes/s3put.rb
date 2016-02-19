@@ -1,5 +1,5 @@
 #require 'aws-sdk'
-include_recipe 'aws'
+depends 'aws'
 directory "/opt/local" do
   owner 'root'
   group 'root'
