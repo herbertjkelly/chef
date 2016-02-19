@@ -1,4 +1,4 @@
-require 'aws-sdk'
+include_recipe 'aws'
 
 directory "/opt/local" do
   owner 'root'
