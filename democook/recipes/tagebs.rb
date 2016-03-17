@@ -1,9 +1,6 @@
 stack = search("aws_opsworks_stack").first
 Chef::Log.info("********** The stack's name is '#{stack['name']}' **********")
-
-
-
-
+Chef::Log.info("********** Starting Bash to tag EBS volumes **********")
 bash 'tagebs' do
   user 'root'
   cwd '/tmp'
@@ -20,3 +17,4 @@ bash 'tagebs' do
   aws ec2 create-tags --resources $volumeid2 --tags Key=Service,Value="frs-research-webservice" --region $region
   EOH
 end
+Chef::Log.info("********** Finished Bash to tag EBS volumes **********")
