@@ -16,7 +16,7 @@ bash 'tagebs' do
                 aws ec2 create-tags --resources $volumeid --tags Key=Name,Value="frs-trx-dev.research.i" --region $region
                 aws ec2 create-tags --resources $volumeid --tags Key=Service,Value="frs-research-webservice" --region $region
         else
-        break
+                break
         fi
 done
   EOH
