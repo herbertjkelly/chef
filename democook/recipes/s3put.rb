@@ -10,9 +10,9 @@ bash 'tagebs' do
     do
         volumeid=$(aws ec2 describe-instances --instance-ids $instanceid --region $region --query 'Reservations[0].Instances[0].BlockDeviceMappings['$i'].{VolID:Ebs.VolumeId}' --output text)
         if ! [ $volumeid = "None" ]; then
-                aws ec2 create-tags --resources $volumeid --tags Key=Stack,Value=node['aws-tag']['tags']['Stack'] --region $region
-                aws ec2 create-tags --resources $volumeid --tags Key=Name,Value=node['aws-tag']['tags']['Name'] --region $region
-                aws ec2 create-tags --resources $volumeid --tags Key=Service,Value=node['aws-tag']['tags']['Service'] --region $region
+                aws ec2 create-tags --resources $volumeid --tags Key=Stack,Value="#{node['aws-tag']['tags']['Stack']}" --region $region
+                aws ec2 create-tags --resources $volumeid --tags Key=Name,Value="#{node['aws-tag']['tags']['Name']}" --region $region
+                aws ec2 create-tags --resources $volumeid --tags Key=Service,Value="#{node['aws-tag']['tags']['Service']}" --region $region
         else
                 break
         fi
