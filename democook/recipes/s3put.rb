@@ -1,1 +1,1 @@
-Chef::Log.info "****** Tag ebs #{node['aws-tag']['tags']} ****"
+Chef::Log.info "****** Tag ebs #{node['opsworks']['instance']['layers']} ****"
