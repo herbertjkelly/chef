@@ -1,5 +1,5 @@
 #require 'aws-sdk'
-depends 'aws'
+#depends 'aws'
 directory "/opt/local" do
   owner 'root'
   group 'root'
