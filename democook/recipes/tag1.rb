@@ -12,7 +12,7 @@ instance_attributes = ec2.describe_instance_attribute({
   instance_id: node['ec2']['instance_id'],
   attribute: "blockDeviceMapping"
 })
-instance_attributes.block_device_mappings.each do|mapping|
+instance_attributes.block_device_mapping.each do|mapping|
   toTag.push(mapping.ebs.volume_id)
 end
 tag_instance = ec2.create_tags({
