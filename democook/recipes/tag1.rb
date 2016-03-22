@@ -9,7 +9,7 @@ toTag = Array.new
 toTag.push(instance)
 ec2 = AWS::EC2::Client.new( :region => "eu-west-1")
 instance_attributes = ec2.describe_instance_attribute({
-  instance_id: instance,
+  instance_id: node['ec2']['instance_id'],
   attribute: "blockDeviceMapping"
 })
 instance_attributes.block_device_mappings.each do|mapping|
