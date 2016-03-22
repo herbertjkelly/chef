@@ -1,2 +1,2 @@
 
-Chef::Log.info "****** '{#Node['ec2_instance_id']}' ******"
+Chef::Log.info "****** '#{Node['ec2_instance_id']}' ******"
