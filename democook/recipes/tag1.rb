@@ -7,7 +7,7 @@ require 'aws-sdk'
 instance = node['ec2']['instance_id']
 toTag = Array.new
 toTag.push(node['ec2']['instance_id'])
-ec2 = AWS::EC2::Client.new( :region => "eu-west-1")
+ec2 = AWS::EC2::Client.new( :region => node['opsworks']['instance']['region'])
 instance_attributes = ec2.describe_instance_attribute({
   instance_id: node['ec2']['instance_id'],
   attribute: "blockDeviceMapping"
